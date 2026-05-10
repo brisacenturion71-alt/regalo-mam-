@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feliz Día Mamá 💖</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ✨ PARTÍCULAS DE FONDO -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- 🎵 MÚSICA -->
+  <div class="music-btn" id="musicBtn" title="Reproducir música">
+    <span class="music-icon">🎵</span>
+    <span class="music-label">Música</span>
+  </div>
+  <audio id="bgMusic" loop>
+    <source src="musica.mp3.mpeg" type="audio/mpeg" />
+  </audio>
+
+  <!-- 💌 CARTA QUE SE ABRE -->
+  <div class="envelope-overlay" id="envelopeOverlay">
+    <div class="envelope-container" id="envelopeContainer">
+      <div class="envelope">
+        <div class="envelope-flap" id="envelopeFlap"></div>
+        <div class="envelope-body">
+          <div class="envelope-heart">💖</div>
+          <p class="envelope-hint">Toca para abrir tu carta</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🌸 CONTENIDO PRINCIPAL -->
+  <main class="main-content" id="mainContent">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-glow"></div>
+      <div class="petals-container" id="petalsContainer"></div>
+      <div class="hearts-container" id="heartsContainer"></div>
+      <div class="hero-text">
+        <p class="intro-phrase" id="introPhrase">Para la mejor mamá del mundo…</p>
+        <h1 class="hero-title">Feliz Día<br/><span class="title-accent">Mamá</span> <span class="title-heart">💖</span></h1>
+        <div class="hero-divider">
+          <span class="divider-line"></span>
+          <span class="divider-icon">🌸</span>
+          <span class="divider-line"></span>
+        </div>
+        <p class="hero-subtitle">Un regalo hecho con todo mi amor</p>
+      </div>
+      <div class="scroll-hint">
+        <span>Deslizá hacia abajo</span>
+        <div class="scroll-arrow">↓</div>
+      </div>
+    </section>
+
+    <!-- CARTA PRINCIPAL -->
+    <section class="letter-section reveal">
+      <div class="letter-wrapper">
+        <div class="letter-decoration top-left">🌸</div>
+        <div class="letter-decoration top-right">🌸</div>
+        <div class="letter-header">
+          <span class="letter-icon">💌</span>
+          <h2 class="letter-title">Mi carta para vos</h2>
+        </div>
+        <div class="letter-body">
+          <p>Mamá, feliz Día de la Madre. ❤️</p>
+          <p>Quiero que sepas que te amo muchísimo y que sos una de las personas más importantes de mi vida. Gracias por estar siempre para mí, por apoyarme en todo, por levantarme cuando estoy mal y por nunca dejarme sola.</p>
+          <p>Admiro muchísimo la mujer fuerte que sos. Sos mi inspiración para ser una mejor persona cada día, porque siempre das lo mejor de vos incluso en los momentos difíciles.</p>
+          <p>También gracias por ser mi mejor amiga, por escucharme, aconsejarme y entenderme como nadie más. No sé qué haría sin vos.</p>
+          <p class="letter-closing">Te amo infinitamente, mamá. 💐</p>
+        </div>
+        <div class="letter-signature">Con todo mi amor 🤍</div>
+        <div class="letter-decoration bottom-left">🌸</div>
+        <div class="letter-decoration bottom-right">🌸</div>
+      </div>
+    </section>
+
+    <!-- BOTONES -->
+    <section class="buttons-section reveal">
+      <button class="btn-love" id="btnLove">Te amo mamá 🤍</button>
+      <button class="btn-hug" id="btnHug">Abrazo virtual para mamá 💐</button>
+      <div class="btn-response" id="btnResponse"></div>
+    </section>
+
+    <!-- LO QUE MÁS AMO -->
+    <section class="love-section reveal">
+      <div class="section-header">
+        <span class="section-icon">💛</span>
+        <h2 class="section-title">Lo que más amo de vos</h2>
+        <span class="section-icon">💛</span>
+      </div>
+      <div class="love-grid">
+        <div class="love-card reveal-card">
+          <div class="love-card-icon">💪</div>
+          <h3>Tu fuerza</h3>
+          <p>Nunca te rendís, pase lo que pase. Eso me inspira cada día.</p>
+        </div>
+        <div class="love-card reveal-card">
+          <div class="love-card-icon">🌟</div>
+          <h3>Tus consejos</h3>
+          <p>Siempre tenés las palabras exactas que necesito escuchar.</p>
+        </div>
+        <div class="love-card reveal-card">
+          <div class="love-card-icon">🌸</div>
+          <h3>Tu manera de cuidarme</h3>
+          <p>Cada detalle tuyo me hace sentir la persona más amada del mundo.</p>
+        </div>
+        <div class="love-card reveal-card">
+          <div class="love-card-icon">🤗</div>
+          <h3>Tu abrazo</h3>
+          <p>El lugar más seguro y cálido que existe en este mundo.</p>
+        </div>
+        <div class="love-card reveal-card">
+          <div class="love-card-icon">❤️</div>
+          <h3>Tu amor incondicional</h3>
+          <p>Un amor que no tiene límites, condiciones ni distancias.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FRASES EMOTIVAS EN SCROLL -->
+    <section class="quotes-section">
+      <div class="quote-item reveal">
+        <p class="quote-text">"Una madre es quien puede tomar el lugar de todos los demás, pero cuyo lugar nadie más puede tomar."</p>
+        <span class="quote-author">— Gaspard Mermillod</span>
+      </div>
+      <div class="quote-item reveal">
+        <p class="quote-text">"El amor de una madre es el combustible que permite a un ser humano normal hacer lo imposible."</p>
+        <span class="quote-author">— Marion C. Garretty</span>
+      </div>
+      <div class="quote-item reveal">
+        <p class="quote-text">"Mamá: la persona que te conoce mejor que nadie y aun así te ama más que nadie."</p>
+        <span class="quote-author">— Anónimo</span>
+      </div>
+    </section>
+
+    <!-- GALERÍA DE FOTOS -->
+    <section class="gallery-section reveal">
+      <div class="section-header">
+        <span class="section-icon">📸</span>
+        <h2 class="section-title">Nuestros momentos</h2>
+        <span class="section-icon">📸</span>
+      </div>
+      <p class="gallery-subtitle">Recuerdos que guardo en el corazón para siempre</p>
+
+      <div class="carousel-wrapper">
+        <div class="carousel-track" id="carouselTrack">
+          <!-- 13 slides -->
+          <div class="carousel-slide active">
+            <div class="photo-frame">
+              <img src="1-foto.jpg.jpeg" alt="Nosotras juntas" />
+            </div>
+            <p class="slide-caption">Un momento especial juntas ✨</p>
+          </div>
+          <div class="carousel-slide">
+            <div class="photo-frame">
+              <img src="2-foto.jpg.jpeg" alt="Nosotras juntas" />
+            </div>
+            <p class="slide-caption">Risas que nunca olvidaré 💕</p>
+          </div>
+          <div class="carousel-slide">
+            <div class="photo-frame">
+              <img src="3-foto.jpg.jpeg" alt="Nosotras juntas" />
+            </div>
+            <p class="slide-caption">Momentos que atesoro 🌷</p>
+          </div>
+          <div class="carousel-slide">
+            <div class="photo-frame">
+              <img src="4-foto.jpg.jpeg" alt="Nosotras juntas" />
+            </div>
+            <p class="slide-caption">Juntas siempre 🤍</p>
+          </div>
+          <div class="carousel-slide">
+            <div class="photo-frame">
+              <img src="5-foto.jpg.jpeg" alt="Nosotras juntas" />
+            </div>
+            <p class="slide-caption">Nuestra historia de amor ✨</p>
+          </div>
+          <div class="carousel-slide">
+            <div class="photo-frame">
+              <img src="6-foto.jpg.jpeg" alt="Nosotras juntas" />
+            </div>
+            <p class="slide-caption">Recuerdos que brillan 🌸</p>
+          </div>
+          <div class="carousel-slide">
+            <div class="photo-frame">
+              <img src="7-foto.jpg.jpeg" alt="Nosotras juntas" />
+            </div>
+            <p class="slide-caption">Amor eterno 💛</p>
+          </div>
+          <div class="carousel-slide">
+            <div class="photo-frame">
+              <img src="8-foto.jpg.jpeg" alt="Nosotras juntas" />
+            </div>
+            <p class="slide-caption">Momentos únicos 🌺</p>
+          </div>
+          <div class="carousel-slide">
+            <div class="photo-frame">
+              <img src="9-foto.jpg.jpeg" alt="Nosotras juntas" />
+            </div>
+            <p class="slide-caption">Siempre en mi corazón 💗</p>
+          </div>
+          <div class="carousel-slide">
+            <div class="photo-frame">
+              <img src="10-foto.jpg.jpeg" alt="Nosotras juntas" />
+            </div>
+            <p class="slide-caption">Mi estrella favorita �</p>
+          </div>
+          <div class="carousel-slide">
+            <div class="photo-frame">
+              <img src="11-foto.jpg.jpeg" alt="Nosotras juntas" />
+            </div>
+            <p class="slide-caption">Flores para vos 🌹</p>
+          </div>
+          <div class="carousel-slide">
+            <div class="photo-frame">
+              <img src="12-foto.jpg.jpeg" alt="Nosotras juntas" />
+            </div>
+            <p class="slide-caption">Todo mi amor �</p>
+          </div>
+          <div class="carousel-slide">
+            <div class="photo-frame">
+              <img src="13-foto.jpg.jpeg" alt="Nosotras juntas" />
+            </div>
+            <p class="slide-caption">Nuestra historia continúa 🦋</p>
+          </div>
+        </div>
+
+        <button class="carousel-btn prev" id="prevBtn">‹</button>
+        <button class="carousel-btn next" id="nextBtn">›</button>
+
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+
+      <!-- ESCENA EMOCIONAL FINAL -->
+      <section class="emotional-scene reveal">
+        <div class="scene-container">
+          <div class="night-sky-bg">
+            <div class="stars-container" id="starsContainer"></div>
+            <div class="particles-container" id="particlesContainer"></div>
+          </div>
+          <div class="emotional-content">
+            <h2 class="gratitude-text">Gracias por todos los días que estuviste para mí</h2>
+            <p class="emotional-counter">∞ días de amor</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- FRASE FINAL -->
+    <section class="final-section reveal">
+      <div class="final-glow"></div>
+      <div class="final-petals" id="finalPetals"></div>
+      <div class="final-content">
+        <div class="final-hearts">💖 💖 💖</div>
+        <h2 class="final-phrase">
+          Si volviera a nacer,<br/>
+          <span class="final-accent">te elegiría como mi mamá</span><br/>
+          una y mil veces más.
+        </h2>
+        <div class="final-heart-big">💖</div>
+        <p class="final-sub">Con todo mi amor, para siempre.</p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>Hecho con 💖 especialmente para vos, mamá</p>
+      <p class="footer-year">2025</p>
+    </footer>
+
+  </main>
+
+  <!-- EXPLOSIÓN DE CORAZONES AL HACER CLICK -->
+  <div class="heart-burst" id="heartBurst"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
